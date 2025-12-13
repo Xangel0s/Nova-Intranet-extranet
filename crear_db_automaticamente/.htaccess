@@ -1,0 +1,19 @@
+# Proteger carpeta de instalación
+# Solo permitir acceso desde localhost en desarrollo
+# En producción, esta carpeta debe ser eliminada completamente
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# Permitir solo desde localhost (ajustar según necesidad)
+<RequireAll>
+    Require ip 127.0.0.1
+    Require ip ::1
+</RequireAll>
+
+# O usar para Apache 2.2:
+# Order Deny,Allow
+# Deny from all
+# Allow from 127.0.0.1
+# Allow from ::1
+

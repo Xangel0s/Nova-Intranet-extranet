@@ -1,0 +1,65 @@
+# Archivos de configuración local
+config/config.local.php
+cliente/config/config.local.php
+admin/config/config.local.php
+
+# Archivos de sesión PHP
+sessions/
+cliente/sessions/
+admin/sessions/
+
+# Logs
+*.log
+logs/
+cliente/logs/
+admin/logs/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.cache
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Archivos de backup
+*.bak
+*.backup
+*_backup.php
+
+# Archivos de base de datos
+*.sql
+*.db
+*.sqlite
+
+# Archivos de entorno
+.env
+.env.local
+
+# Archivos de uploads (opcional - descomentar si no quieres subir archivos subidos)
+# publico/img_data/*
+# publico/uploads/*
+# cliente/publico/*
+# admin/publico/*
+
+# Archivos de instalación (IMPORTANTE: Eliminar en producción)
+# crear_db_automaticamente/install.php
+
+# Node modules (si se usa npm)
+node_modules/
+package-lock.json
+
+# Composer
+vendor/
+composer.lock
+
+# Archivos de sistema
+.htaccess.backup
+*.orig
+
