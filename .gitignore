@@ -2,17 +2,23 @@
 config/config.local.php
 cliente/config/config.local.php
 admin/config/config.local.php
+intranet/config/config.local.php
+extranet/config/config.local.php
 
 # Archivos de sesión PHP
 sessions/
 cliente/sessions/
 admin/sessions/
+intranet/sessions/
+extranet/sessions/
 
 # Logs
 *.log
 logs/
 cliente/logs/
 admin/logs/
+intranet/logs/
+extranet/logs/
 
 # Archivos temporales
 *.tmp
