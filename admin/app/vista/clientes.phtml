@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Nova Extranet</title>
+    <link rel="stylesheet" href="<?php echo ruta; ?>include/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Nova Extranet</h1>
+            <div class="user-info">
+                <span><?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
+                <a href="<?php echo ruta; ?>?pagina=logout" class="btn-logout">Cerrar Sesión</a>
+            </div>
+        </header>
+        
+        <nav class="nav">
+            <a href="<?php echo ruta; ?>?pagina=inicio" class="nav-link">Inicio</a>
+            <a href="<?php echo ruta; ?>?pagina=clientes" class="nav-link active">Clientes</a>
+            <a href="<?php echo ruta; ?>?pagina=ordenes" class="nav-link">Órdenes</a>
+            <a href="<?php echo ruta; ?>?pagina=pdf" class="nav-link">PDFs</a>
+        </nav>
+        
+        <main class="main-content">
+            <h2>Clientes</h2>
+            
+            <?php if (empty($clientes)): ?>
+                <div class="empty-state">
+                    <p>No hay clientes registrados</p>
+                </div>
+            <?php else: ?>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>RUC</th>
+                                <th>Razón Social</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Fecha Registro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($clientes as $cliente): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($cliente['ruc']); ?></td>
+                                    <td><?php echo htmlspecialchars($cliente['razon_social']); ?></td>
+                                    <td><?php echo htmlspecialchars($cliente['correo'] ?? 'N/A'); ?></td>
+                                    <td><?php echo htmlspecialchars($cliente['telefono'] ?? 'N/A'); ?></td>
+                                    <td><?php echo date('d/m/Y', strtotime($cliente['fecha_registro'])); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </main>
+    </div>
+</body>
+</html>
+

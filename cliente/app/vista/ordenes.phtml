@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Órdenes - Nova Intranet</title>
+    <link rel="stylesheet" href="<?php echo ruta; ?>include/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Nova Intranet</h1>
+            <div class="user-info">
+                <span><?php echo htmlspecialchars($_SESSION['razon_social']); ?></span>
+                <a href="<?php echo ruta; ?>?pagina=logout" class="btn-logout">Cerrar Sesión</a>
+            </div>
+        </header>
+        
+        <nav class="nav">
+            <a href="<?php echo ruta; ?>?pagina=ordenes" class="nav-link active">Órdenes</a>
+            <a href="<?php echo ruta; ?>?pagina=perfil" class="nav-link">Perfil</a>
+        </nav>
+        
+        <main class="main-content">
+            <h2>Mis Órdenes</h2>
+            
+            <?php if (empty($ordenes)): ?>
+                <div class="empty-state">
+                    <p>No hay órdenes disponibles</p>
+                </div>
+            <?php else: ?>
+                <div class="orders-list">
+                    <?php foreach ($ordenes as $orden): ?>
+                        <div class="order-card">
+                            <h3><?php echo htmlspecialchars($orden['pdf']); ?></h3>
+                            <p><strong>Estado:</strong> <?php echo $orden['estado'] ? 'Aprobado' : 'Observado'; ?></p>
+                            <p><strong>Fecha:</strong> <?php echo date('d/m/Y', strtotime($orden['fecha_creacion'])); ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </main>
+    </div>
+</body>
+</html>
+

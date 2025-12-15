@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Nova Intranet</title>
+    <link rel="stylesheet" href="<?php echo ruta; ?>include/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Nova Intranet</h1>
+            <div class="user-info">
+                <span><?php echo htmlspecialchars($_SESSION['razon_social']); ?></span>
+                <a href="<?php echo ruta; ?>?pagina=logout" class="btn-logout">Cerrar Sesión</a>
+            </div>
+        </header>
+        
+        <nav class="nav">
+            <a href="<?php echo ruta; ?>?pagina=ordenes" class="nav-link">Órdenes</a>
+            <a href="<?php echo ruta; ?>?pagina=perfil" class="nav-link active">Perfil</a>
+        </nav>
+        
+        <main class="main-content">
+            <h2>Mi Perfil</h2>
+            
+            <?php if ($perfil): ?>
+                <div class="profile-info">
+                    <p><strong>RUC:</strong> <?php echo htmlspecialchars($perfil['ruc']); ?></p>
+                    <p><strong>Razón Social:</strong> <?php echo htmlspecialchars($perfil['razon_social']); ?></p>
+                    <p><strong>Correo:</strong> <?php echo htmlspecialchars($perfil['correo'] ?? 'N/A'); ?></p>
+                    <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($perfil['telefono'] ?? 'N/A'); ?></p>
+                    <p><strong>Dirección:</strong> <?php echo htmlspecialchars($perfil['direccion'] ?? 'N/A'); ?></p>
+                </div>
+            <?php else: ?>
+                <div class="empty-state">
+                    <p>No se pudo cargar la información del perfil</p>
+                </div>
+            <?php endif; ?>
+        </main>
+    </div>
+</body>
+</html>
+

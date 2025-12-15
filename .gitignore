@@ -63,3 +63,7 @@ composer.lock
 .htaccess.backup
 *.orig
 
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/

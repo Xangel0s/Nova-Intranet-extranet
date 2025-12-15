@@ -1,0 +1,24 @@
+{
+  "name": "nova-intranet-tests",
+  "version": "1.0.0",
+  "description": "Pruebas E2E para Nova Intranet con Playwright",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:flujos": "playwright test tests/flujos-completos.spec.js",
+    "test:videos": "playwright test tests/flujos-video.spec.js",
+    "test:flujos:headed": "playwright test tests/flujos-completos.spec.js --headed",
+    "test:videos:headed": "playwright test tests/flujos-video.spec.js --headed",
+    "test:archivos": "playwright test tests/flujos-completos-archivos.spec.js",
+    "test:archivos:video": "playwright test tests/flujos-video-archivos.spec.js",
+    "test:archivos:headed": "playwright test tests/flujos-completos-archivos.spec.js --headed",
+    "test:archivos:ui": "playwright test tests/flujos-completos-archivos.spec.js --ui",
+    "test:archivos:video:ui": "playwright test tests/flujos-video-archivos.spec.js --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
+
