@@ -141,6 +141,13 @@ body {
     border-radius: 4px;
 }
 
+.profile-info p i {
+    margin-right: 8px;
+    color: #667eea;
+    width: 20px;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;

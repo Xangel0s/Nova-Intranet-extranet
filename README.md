@@ -2,7 +2,7 @@
 
 Sistema completo de gestión para clientes (Intranet) y administradores (Extranet) desarrollado en PHP con arquitectura MVC.
 
-## 📋 Tabla de Contenidos
+## <i class="fa fa-clipboard-list"></i> Tabla de Contenidos
 
 - [Características](#características)
 - [Requisitos](#requisitos)
@@ -17,19 +17,19 @@ Sistema completo de gestión para clientes (Intranet) y administradores (Extrane
 
 ---
 
-## 🚀 Características
+## <i class="fa fa-rocket"></i> Características
 
-- ✅ Sistema de autenticación para clientes y administradores
-- ✅ Gestión de órdenes y documentos PDF
-- ✅ Panel de administración completo
-- ✅ URLs amigables y limpias
-- ✅ Arquitectura MVC
-- ✅ Base de datos MySQL
-- ✅ Diseño responsive
+- <i class="fa fa-check"></i> Sistema de autenticación para clientes y administradores
+- <i class="fa fa-check"></i> Gestión de órdenes y documentos PDF
+- <i class="fa fa-check"></i> Panel de administración completo
+- <i class="fa fa-check"></i> URLs amigables y limpias
+- <i class="fa fa-check"></i> Arquitectura MVC
+- <i class="fa fa-check"></i> Base de datos MySQL
+- <i class="fa fa-check"></i> Diseño responsive
 
 ---
 
-## 📦 Requisitos
+## <i class="fa fa-box"></i> Requisitos
 
 - **PHP:** 7.2 o superior
 - **MySQL:** 5.5 o superior
@@ -38,7 +38,7 @@ Sistema completo de gestión para clientes (Intranet) y administradores (Extrane
 
 ---
 
-## 🔧 Instalación
+## <i class="fa fa-wrench"></i> Instalación
 
 ### 1. Clonar el Repositorio
 
@@ -76,7 +76,7 @@ Los archivos `config.php` ya están configurados para desarrollo local. Si neces
 
 ---
 
-## 📁 Estructura del Proyecto
+## <i class="fa fa-folder"></i> Estructura del Proyecto
 
 ```
 htdocs/
@@ -119,7 +119,7 @@ htdocs/
 
 ---
 
-## 🌐 URLs del Sistema
+## <i class="fa fa-globe"></i> URLs del Sistema
 
 ### Cliente (Intranet)
 - **Login:** `http://localhost/cliente`
@@ -136,7 +136,7 @@ htdocs/
 
 ---
 
-## 🔑 Credenciales de Prueba
+## <i class="fa fa-key"></i> Credenciales de Prueba
 
 ### Cliente (Intranet)
 - **RUC:** `20123456789`
@@ -146,23 +146,23 @@ htdocs/
 - **Usuario:** `admin`
 - **Contraseña:** `admin123`
 
-> ⚠️ **Nota:** Estas credenciales se crean automáticamente al ejecutar el script de instalación.
+> <i class="fa fa-exclamation-triangle"></i> **Nota:** Estas credenciales se crean automáticamente al ejecutar el script de instalación.
 
 ---
 
-## 🐛 Errores Corregidos
+## <i class="fa fa-bug"></i> Errores Corregidos
 
-### 1. ❌ Error 404 en Login Cliente y Admin
+### 1. <i class="fa fa-times"></i> Error 404 en Login Cliente y Admin
 
 **Problema:**
 - Los formularios de login redirigían a URLs incorrectas
 - Las rutas en `config.php` no coincidían con la nueva estructura
 
 **Solución:**
-- ✅ Actualizado `cliente/config/config.php` → Ruta: `/cliente/`
-- ✅ Actualizado `admin/config/config.php` → Ruta: `/admin/`
-- ✅ Corregidos `form action` en `login.phtml` de ambos sistemas
-- ✅ Corregidas redirecciones en controladores
+- <i class="fa fa-check"></i> Actualizado `cliente/config/config.php` → Ruta: `/cliente/`
+- <i class="fa fa-check"></i> Actualizado `admin/config/config.php` → Ruta: `/admin/`
+- <i class="fa fa-check"></i> Corregidos `form action` en `login.phtml` de ambos sistemas
+- <i class="fa fa-check"></i> Corregidas redirecciones en controladores
 
 **Archivos modificados:**
 - `cliente/config/config.php`
@@ -174,14 +174,14 @@ htdocs/
 
 ---
 
-### 2. ❌ Error 404 en Fuentes Font Awesome
+### 2. <i class="fa fa-times"></i> Error 404 en Fuentes Font Awesome
 
 **Problema:**
 - El CSS buscaba archivos con hash `5b62` en el nombre
 - Los archivos tenían nombres sin hash
 
 **Solución:**
-- ✅ Creados archivos con nombres correctos:
+- <i class="fa fa-check"></i> Creados archivos con nombres correctos:
   - `fontawesome-webfont5b62.woff2`
   - `fontawesome-webfont5b62.woff`
   - `fontawesome-webfont5b62.ttf`
@@ -194,7 +194,7 @@ htdocs/
 
 ---
 
-### 3. ❌ Redirección a "#" en Login Cliente
+### 3. <i class="fa fa-times"></i> Redirección a "#" en Login Cliente
 
 **Problema:**
 - El login AJAX no manejaba correctamente las respuestas JSON
@@ -202,10 +202,10 @@ htdocs/
 - El JavaScript no validaba correctamente las respuestas
 
 **Solución:**
-- ✅ Agregado header JSON en `cliente/app/modelo/loginModelo.php`
-- ✅ Mejorado manejo de errores con JSON válido
-- ✅ Mejorada validación de respuestas en JavaScript
-- ✅ Agregada validación de campos antes de procesar
+- <i class="fa fa-check"></i> Agregado header JSON en `cliente/app/modelo/loginModelo.php`
+- <i class="fa fa-check"></i> Mejorado manejo de errores con JSON válido
+- <i class="fa fa-check"></i> Mejorada validación de respuestas en JavaScript
+- <i class="fa fa-check"></i> Agregada validación de campos antes de procesar
 
 **Archivos modificados:**
 - `cliente/app/modelo/loginModelo.php`
@@ -213,16 +213,16 @@ htdocs/
 
 ---
 
-### 4. ❌ Error en Lógica de Login Admin
+### 4. <i class="fa fa-times"></i> Error en Lógica de Login Admin
 
 **Problema:**
 - El modelo buscaba usuario por campo `dni` que no existía
 - Debería buscar por campo `usuario`
 
 **Solución:**
-- ✅ Corregida consulta SQL para usar campo `usuario`
-- ✅ Mejorado manejo de errores y redirecciones
-- ✅ Agregada validación de campos
+- <i class="fa fa-check"></i> Corregida consulta SQL para usar campo `usuario`
+- <i class="fa fa-check"></i> Mejorado manejo de errores y redirecciones
+- <i class="fa fa-check"></i> Agregada validación de campos
 
 **Archivos modificados:**
 - `admin/app/modelo/loginModelo.php`
@@ -230,39 +230,39 @@ htdocs/
 
 ---
 
-### 5. ❌ Error 403 en Script de Instalación
+### 5. <i class="fa fa-times"></i> Error 403 en Script de Instalación
 
 **Problema:**
 - El `.htaccess` en `crear_db_automaticamente/` era muy restrictivo
 - Bloqueaba el acceso al script de instalación
 
 **Solución:**
-- ✅ Ajustado `.htaccess` para permitir acceso local
-- ✅ Script movido a carpeta dedicada para mejor organización
+- <i class="fa fa-check"></i> Ajustado `.htaccess` para permitir acceso local
+- <i class="fa fa-check"></i> Script movido a carpeta dedicada para mejor organización
 
 **Archivos modificados:**
 - `crear_db_automaticamente/.htaccess`
 
 ---
 
-### 6. ❌ Estructura de URLs Larga y Expuesta
+### 6. <i class="fa fa-times"></i> Estructura de URLs Larga y Expuesta
 
 **Problema:**
 - URLs largas como: `http://localhost/novasolutions/Nova-Intranet-extranet/Intranet-Extranet/intranet/cliente`
 - Exponía la estructura interna del proyecto
 
 **Solución:**
-- ✅ Reorganizada estructura del proyecto
-- ✅ Movidas carpetas `cliente/` y `admin/` a raíz de `htdocs/`
-- ✅ Creados archivos `.htaccess` para URLs amigables
-- ✅ Actualizadas todas las rutas en archivos de configuración
+- <i class="fa fa-check"></i> Reorganizada estructura del proyecto
+- <i class="fa fa-check"></i> Movidas carpetas `cliente/` y `admin/` a raíz de `htdocs/`
+- <i class="fa fa-check"></i> Creados archivos `.htaccess` para URLs amigables
+- <i class="fa fa-check"></i> Actualizadas todas las rutas en archivos de configuración
 
 **Resultado:**
 - URLs limpias: `http://localhost/cliente` y `http://localhost/admin`
 
 ---
 
-## ⚠️ Problemas Conocidos y Soluciones
+## <i class="fa fa-exclamation-triangle"></i> Problemas Conocidos y Soluciones
 
 ### Problema: Error 404 al acceder a rutas
 
@@ -322,7 +322,7 @@ htdocs/
 **Causa:** Caché del navegador o respuesta JSON inválida
 
 **Solución:**
-1. ✅ **RESUELTO:** Se corrigió el manejo de respuestas JSON
+1. <i class="fa fa-check"></i> **RESUELTO:** Se corrigió el manejo de respuestas JSON
 2. Limpiar caché del navegador (Ctrl+Shift+Delete)
 3. Hacer hard refresh (Ctrl+F5)
 
@@ -339,7 +339,7 @@ htdocs/
 
 ---
 
-## ⚙️ Configuración
+## <i class="fa fa-cog"></i> Configuración
 
 ### Configuración de Base de Datos
 
@@ -360,9 +360,9 @@ Las rutas se configuran automáticamente, pero puedes modificarlas en:
 
 ---
 
-## 🔒 Seguridad
+## <i class="fa fa-lock"></i> Seguridad
 
-### ⚠️ IMPORTANTE - Antes de Subir a Producción:
+### <i class="fa fa-exclamation-triangle"></i> IMPORTANTE - Antes de Subir a Producción:
 
 1. **Eliminar script de instalación:**
    ```bash
@@ -387,7 +387,7 @@ Las rutas se configuran automáticamente, pero puedes modificarlas en:
 
 ---
 
-## 🛠️ Desarrollo
+## <i class="fa fa-tools"></i> Desarrollo
 
 ### Estructura MVC
 
@@ -404,35 +404,35 @@ Las rutas se configuran automáticamente, pero puedes modificarlas en:
 
 ---
 
-## 📝 Changelog
+## <i class="fa fa-file-alt"></i> Changelog
 
 ### Versión 2.0 - Reorganización Completa
-- ✅ Reorganizada estructura del proyecto
-- ✅ URLs limpias y amigables
-- ✅ Corregidos todos los errores de login
-- ✅ Corregidos errores de Font Awesome
-- ✅ Mejorado manejo de errores
-- ✅ Script de instalación automatizado
+- <i class="fa fa-check"></i> Reorganizada estructura del proyecto
+- <i class="fa fa-check"></i> URLs limpias y amigables
+- <i class="fa fa-check"></i> Corregidos todos los errores de login
+- <i class="fa fa-check"></i> Corregidos errores de Font Awesome
+- <i class="fa fa-check"></i> Mejorado manejo de errores
+- <i class="fa fa-check"></i> Script de instalación automatizado
 
 ### Versión 1.0 - Versión Inicial
 - Sistema básico funcional
 
 ---
 
-## 👥 Contribuidores
+## <i class="fa fa-users"></i> Contribuidores
 
 - **Desarrollador Principal:** Xangel0s
 - **Reorganización y Correcciones:** Sistema de correcciones automatizadas
 
 ---
 
-## 📄 Licencia
+## <i class="fa fa-file"></i> Licencia
 
 Este proyecto es privado y de uso exclusivo de Nova Solutions S.A.C.
 
 ---
 
-## 📞 Soporte
+## <i class="fa fa-phone"></i> Soporte
 
 Para reportar problemas o sugerencias, crear un issue en el repositorio de GitHub.
 

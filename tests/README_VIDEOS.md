@@ -2,7 +2,7 @@
 
 Este documento explica cómo ejecutar las pruebas que generan videos de los flujos completos del sistema.
 
-## 🎥 Pruebas con Video
+## <i class="fa fa-video"></i> Pruebas con Video
 
 Se han creado pruebas específicas que graban videos completos de los flujos de usuario y administrador.
 
@@ -11,7 +11,7 @@ Se han creado pruebas específicas que graban videos completos de los flujos de 
 1. **`flujos-completos.spec.js`** - Pruebas de flujo completo con video
 2. **`flujos-video.spec.js`** - Pruebas optimizadas para generar videos demostrativos
 
-## 🚀 Ejecutar Pruebas con Video
+## <i class="fa fa-rocket"></i> Ejecutar Pruebas con Video
 
 ### Ejecutar todas las pruebas de flujo
 ```bash
@@ -29,7 +29,7 @@ npm run test:flujos:headed
 npm run test:videos:headed
 ```
 
-## 📹 Ubicación de los Videos
+## <i class="fa fa-folder"></i> Ubicación de los Videos
 
 Los videos se guardan automáticamente en:
 ```
@@ -38,7 +38,7 @@ test-results/
       └── video.webm
 ```
 
-## 🎬 Flujos Grabados
+## <i class="fa fa-film"></i> Flujos Grabados
 
 ### Flujo Cliente (Usuario)
 1. Acceso a página de login
@@ -65,14 +65,14 @@ test-results/
 - Comparación lado a lado de funcionalidades cliente vs admin
 - Demostración de diferencias en permisos y opciones disponibles
 
-## ⚙️ Configuración de Video
+## <i class="fa fa-cog"></i> Configuración de Video
 
 Los videos están configurados en `playwright.config.js`:
 - **Resolución:** 1280x720
 - **Formato:** WebM
 - **Activación:** Automática en todas las pruebas
 
-## 📋 Comandos Útiles
+## <i class="fa fa-clipboard-list"></i> Comandos Útiles
 
 ### Ver solo pruebas que pasaron
 ```bash
@@ -89,7 +89,7 @@ npx playwright test tests/flujos-video.spec.js -g "flujo completo cliente"
 npx playwright show-report
 ```
 
-## 🎯 Uso de los Videos
+## <i class="fa fa-bullseye"></i> Uso de los Videos
 
 Los videos generados pueden usarse para:
 - **Documentación:** Mostrar cómo funciona el sistema
@@ -98,14 +98,14 @@ Los videos generados pueden usarse para:
 - **QA:** Revisar el comportamiento del sistema
 - **Debugging:** Identificar problemas visuales
 
-## 📝 Notas
+## <i class="fa fa-file-alt"></i> Notas
 
 - Los videos incluyen pausas estratégicas para mejor visualización
 - Las pruebas están optimizadas para generar videos claros y comprensibles
 - Los videos se generan automáticamente, incluso si la prueba falla
 - Los videos se guardan en formato WebM (compatible con la mayoría de navegadores)
 
-## 🔍 Ver Videos
+## <i class="fa fa-search"></i> Ver Videos
 
 1. Ejecutar las pruebas:
    ```bash
@@ -119,7 +119,7 @@ Los videos generados pueden usarse para:
 
 3. En el reporte, hacer clic en cualquier prueba para ver el video asociado
 
-## 🎬 Ejemplo de Uso
+## <i class="fa fa-film"></i> Ejemplo de Uso
 
 ```bash
 # Ejecutar pruebas de video

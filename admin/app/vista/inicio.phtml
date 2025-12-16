@@ -11,7 +11,14 @@
         <header class="header">
             <h1>Nova Extranet</h1>
             <div class="user-info">
-                <span><?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
+                <span><?php 
+                // Función para limpiar emojis
+                function limpiarEmojisHeader($texto) {
+                    if (empty($texto)) return $texto;
+                    return preg_replace('/[\x{1F300}-\x{1F9FF}]/u', '', $texto);
+                }
+                echo htmlspecialchars(limpiarEmojisHeader($_SESSION['nombre'])); 
+                ?></span>
                 <a href="<?php echo ruta; ?>?pagina=logout" class="btn-logout">Cerrar Sesión</a>
             </div>
         </header>

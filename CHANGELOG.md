@@ -4,7 +4,7 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
 
 ## [2.1.0] - 2024-12-XX
 
-### ✨ Nuevas Características
+### <i class="fa fa-star"></i> Nuevas Características
 - **Sistema de Modales Completo**: Implementación de modales de confirmación y éxito en todas las operaciones CRUD
   - Modales de confirmación para eliminación (usuarios, empresas, PDFs)
   - Modales de éxito/error para crear y editar
@@ -17,7 +17,7 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
   - Footer visible con espaciado correcto
   - Slogan movido debajo del título en rectángulo con bordes
 
-### 🎨 Mejoras de Diseño
+### <i class="fa fa-palette"></i> Mejoras de Diseño
 - **Paleta de Colores Nova Solutions**: Aplicación consistente de colores corporativos
   - Azul principal: #1E3A8A
   - Botones y elementos interactivos con colores de marca
@@ -28,7 +28,7 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
   - Tabla con `margin-bottom: 80px` para respetar espacios
   - Padding ajustado en todos los componentes
 
-### 🐛 Correcciones de Errores
+### <i class="fa fa-bug"></i> Correcciones de Errores
 - **Error de Permisos**: Corregido `tienePermiso()` no definido en `clientesCon.php`
   - Movido `require_once` de `permisosHelper.php` al inicio del archivo
 
@@ -45,7 +45,7 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
   - Lógica para forzar `activo = 1` para usuarios admin
   - Script `activar_admin.php` para asegurar estado correcto
 
-### 🔧 Optimizaciones
+### <i class="fa fa-wrench"></i> Optimizaciones
 - **Estructura de Código**:
   - Eliminación de mensajes de alerta duplicados (solo modales)
   - Limpieza de código CSS redundante
@@ -55,7 +55,7 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
   - Optimización de consultas SQL
   - Mejora de carga de recursos CSS/JS
 
-### 📝 Documentación
+### <i class="fa fa-file-alt"></i> Documentación
 - Actualización de README.md con nueva estructura
 - Documentación de cambios en CHANGELOG.md
 
@@ -63,14 +63,14 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
 
 ## [2.0.0] - 2024-12-XX
 
-### ✨ Características Principales
+### <i class="fa fa-star"></i> Características Principales
 - Sistema completo de gestión de usuarios con roles y permisos
 - Módulo de auditoría para administradores
 - Sistema de notificaciones para PDFs por vencer
 - Gestión completa de empresas y documentos
 - Paginación en todos los módulos principales
 
-### 🎨 Diseño
+### <i class="fa fa-palette"></i> Diseño
 - Dashboard moderno con sidebar y header fijo
 - Diseño responsive con hamburger menu
 - Sistema de notificaciones con dropdown
@@ -80,7 +80,7 @@ Todos los cambios notables de este proyecto serán documentados en este archivo.
 
 ## [1.0.0] - 2024-12-XX
 
-### ✨ Versión Inicial
+### <i class="fa fa-star"></i> Versión Inicial
 - Sistema básico de login para clientes y administradores
 - Gestión de órdenes y documentos PDF
 - Panel de administración básico

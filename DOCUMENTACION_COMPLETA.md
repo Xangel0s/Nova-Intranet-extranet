@@ -1,10 +1,10 @@
-# 📚 Documentación Completa - Nova Intranet/Extranet
+# <i class="fa fa-book"></i> Documentación Completa - Nova Intranet/Extranet
 
 **Sistema de Gestión Integral para Nova Solutions S.A.C.**
 
 ---
 
-## 📋 Tabla de Contenidos
+## <i class="fa fa-clipboard-list"></i> Tabla de Contenidos
 
 1. [Descripción General](#descripción-general)
 2. [Características del Sistema](#características-del-sistema)
@@ -21,7 +21,7 @@
 
 ---
 
-## 📖 Descripción General
+## <i class="fa fa-book-open"></i> Descripción General
 
 **Nova Intranet/Extranet** es un sistema completo de gestión desarrollado en PHP con arquitectura MVC (Modelo-Vista-Controlador) que permite:
 
@@ -41,9 +41,9 @@ El sistema está diseñado para ser escalable, seguro y fácil de mantener, sigu
 
 ---
 
-## 🚀 Características del Sistema
+## <i class="fa fa-rocket"></i> Características del Sistema
 
-### ✨ Características Principales
+### <i class="fa fa-star"></i> Características Principales
 
 #### 1. **Sistema de Autenticación**
 - Login seguro para usuarios de intranet
@@ -52,63 +52,63 @@ El sistema está diseñado para ser escalable, seguro y fácil de mantener, sigu
 - Logout seguro con limpieza de sesiones
 
 #### 2. **Gestión de Usuarios (Intranet)**
-- ✅ Crear, editar, eliminar usuarios
-- ✅ Sistema de roles: Admin, Editor, Visualizador
-- ✅ Activación/desactivación de usuarios
-- ✅ Campo "Área" para organización
-- ✅ Protección del usuario admin
-- ✅ Paginación en tabla de usuarios
+- <i class="fa fa-check"></i> Crear, editar, eliminar usuarios
+- <i class="fa fa-check"></i> Sistema de roles: Admin, Editor, Visualizador
+- <i class="fa fa-check"></i> Activación/desactivación de usuarios
+- <i class="fa fa-check"></i> Campo "Área" para organización
+- <i class="fa fa-check"></i> Protección del usuario admin
+- <i class="fa fa-check"></i> Paginación en tabla de usuarios
 
 #### 3. **Gestión de Empresas/Clientes**
-- ✅ CRUD completo de empresas
-- ✅ Asociación de documentos PDF a empresas
-- ✅ Paginación en tabla de empresas
-- ✅ Validación de datos
+- <i class="fa fa-check"></i> CRUD completo de empresas
+- <i class="fa fa-check"></i> Asociación de documentos PDF a empresas
+- <i class="fa fa-check"></i> Paginación en tabla de empresas
+- <i class="fa fa-check"></i> Validación de datos
 
 #### 4. **Gestión de Documentos PDF**
-- ✅ Subida de archivos PDF
-- ✅ Asociación a empresas/clientes
-- ✅ Fechas de vencimiento
-- ✅ Notificaciones de documentos por vencer
-- ✅ Visualización y descarga
-- ✅ Paginación en listado de PDFs
-- ✅ Filtros por empresa y estado
+- <i class="fa fa-check"></i> Subida de archivos PDF
+- <i class="fa fa-check"></i> Asociación a empresas/clientes
+- <i class="fa fa-check"></i> Fechas de vencimiento
+- <i class="fa fa-check"></i> Notificaciones de documentos por vencer
+- <i class="fa fa-check"></i> Visualización y descarga
+- <i class="fa fa-check"></i> Paginación en listado de PDFs
+- <i class="fa fa-check"></i> Filtros por empresa y estado
 
 #### 5. **Módulo de Auditoría (Solo Admin)**
-- ✅ Registro de todas las acciones de usuarios
-- ✅ Filtros avanzados:
+- <i class="fa fa-check"></i> Registro de todas las acciones de usuarios
+- <i class="fa fa-check"></i> Filtros avanzados:
   - Por usuario (dropdown con autocompletado)
   - Por acción (dropdown con autocompletado)
   - Por módulo (dropdown con autocompletado)
   - Por fecha
-- ✅ Estadísticas en cards
-- ✅ Paginación
-- ✅ Registro de IP y User Agent
-- ✅ Exclusivo para intranet (no registra acciones de extranet)
+- <i class="fa fa-check"></i> Estadísticas en cards
+- <i class="fa fa-check"></i> Paginación
+- <i class="fa fa-check"></i> Registro de IP y User Agent
+- <i class="fa fa-check"></i> Exclusivo para intranet (no registra acciones de extranet)
 
 #### 6. **Sistema de Notificaciones**
-- ✅ Notificaciones de PDFs próximos a vencer
-- ✅ Contador en header
-- ✅ Dropdown con lista de documentos
-- ✅ Enlaces directos a documentos
+- <i class="fa fa-check"></i> Notificaciones de PDFs próximos a vencer
+- <i class="fa fa-check"></i> Contador en header
+- <i class="fa fa-check"></i> Dropdown con lista de documentos
+- <i class="fa fa-check"></i> Enlaces directos a documentos
 
 #### 7. **Sistema de Modales**
-- ✅ Modales de confirmación para eliminaciones
-- ✅ Modales de éxito/error para operaciones
-- ✅ Limpieza automática de URL para evitar reaparición
-- ✅ Diseño consistente en todo el sistema
+- <i class="fa fa-check"></i> Modales de confirmación para eliminaciones
+- <i class="fa fa-check"></i> Modales de éxito/error para operaciones
+- <i class="fa fa-check"></i> Limpieza automática de URL para evitar reaparición
+- <i class="fa fa-check"></i> Diseño consistente en todo el sistema
 
 #### 8. **Extranet (Portal de Clientes)**
-- ✅ Login por RUC y contraseña
-- ✅ Visualización de documentos propios
-- ✅ Descarga de PDFs
-- ✅ Diseño minimalista y profesional
-- ✅ Footer siempre visible
-- ✅ Responsive design
+- <i class="fa fa-check"></i> Login por RUC y contraseña
+- <i class="fa fa-check"></i> Visualización de documentos propios
+- <i class="fa fa-check"></i> Descarga de PDFs
+- <i class="fa fa-check"></i> Diseño minimalista y profesional
+- <i class="fa fa-check"></i> Footer siempre visible
+- <i class="fa fa-check"></i> Responsive design
 
 ---
 
-## 🏗️ Arquitectura y Estructura
+## <i class="fa fa-building"></i> Arquitectura y Estructura
 
 ### Estructura del Proyecto
 
@@ -218,7 +218,7 @@ El sistema sigue el patrón **Modelo-Vista-Controlador**:
 
 ---
 
-## 📦 Módulos Implementados
+## <i class="fa fa-box"></i> Módulos Implementados
 
 ### 1. Módulo de Usuarios
 
@@ -359,31 +359,31 @@ El sistema sigue el patrón **Modelo-Vista-Controlador**:
 
 ---
 
-## 👥 Sistema de Usuarios y Permisos
+## <i class="fa fa-users"></i> Sistema de Usuarios y Permisos
 
 ### Roles del Sistema
 
 #### 1. **Admin**
-- ✅ Acceso completo a todos los módulos
-- ✅ Gestión de usuarios (crear, editar, eliminar, activar/desactivar)
-- ✅ Gestión de empresas
-- ✅ Gestión de PDFs
-- ✅ Acceso al módulo de auditoría
-- ✅ Ver estadísticas completas
+- <i class="fa fa-check"></i> Acceso completo a todos los módulos
+- <i class="fa fa-check"></i> Gestión de usuarios (crear, editar, eliminar, activar/desactivar)
+- <i class="fa fa-check"></i> Gestión de empresas
+- <i class="fa fa-check"></i> Gestión de PDFs
+- <i class="fa fa-check"></i> Acceso al módulo de auditoría
+- <i class="fa fa-check"></i> Ver estadísticas completas
 
 #### 2. **Editor**
-- ✅ Crear, editar, eliminar empresas
-- ✅ Crear, editar, eliminar PDFs
-- ✅ Ver usuarios (sin editar)
-- ❌ No puede gestionar usuarios
-- ❌ No tiene acceso a auditoría
+- <i class="fa fa-check"></i> Crear, editar, eliminar empresas
+- <i class="fa fa-check"></i> Crear, editar, eliminar PDFs
+- <i class="fa fa-check"></i> Ver usuarios (sin editar)
+- <i class="fa fa-times"></i> No puede gestionar usuarios
+- <i class="fa fa-times"></i> No tiene acceso a auditoría
 
 #### 3. **Visualizador**
-- ✅ Ver usuarios
-- ✅ Ver empresas
-- ✅ Ver PDFs
-- ❌ No puede crear, editar o eliminar
-- ❌ No tiene acceso a auditoría
+- <i class="fa fa-check"></i> Ver usuarios
+- <i class="fa fa-check"></i> Ver empresas
+- <i class="fa fa-check"></i> Ver PDFs
+- <i class="fa fa-times"></i> No puede crear, editar o eliminar
+- <i class="fa fa-times"></i> No tiene acceso a auditoría
 
 ### Sistema de Permisos
 
@@ -415,7 +415,7 @@ El usuario `admin` está protegido contra:
 
 ---
 
-## 🗄️ Base de Datos
+## <i class="fa fa-database"></i> Base de Datos
 
 ### Estructura de Tablas
 
@@ -505,7 +505,7 @@ CREATE TABLE auditoria (
 
 ---
 
-## ⚙️ Instalación y Configuración
+## <i class="fa fa-cog"></i> Instalación y Configuración
 
 ### Requisitos Previos
 
@@ -584,7 +584,7 @@ define('ruta', 'http://'.$_SERVER["HTTP_HOST"].'/extranet/');
 
 ---
 
-## 🎨 Diseño y UI/UX
+## <i class="fa fa-palette"></i> Diseño y UI/UX
 
 ### Paleta de Colores Nova Solutions
 
@@ -644,7 +644,7 @@ define('ruta', 'http://'.$_SERVER["HTTP_HOST"].'/extranet/');
 
 ---
 
-## 🐛 Errores Corregidos
+## <i class="fa fa-bug"></i> Errores Corregidos
 
 ### 1. Error de Sintaxis PHP
 **Error**: `Parse error: syntax error, unexpected token "catch"`
@@ -701,7 +701,7 @@ define('ruta', 'http://'.$_SERVER["HTTP_HOST"].'/extranet/');
 
 ---
 
-## 🔒 Seguridad
+## <i class="fa fa-lock"></i> Seguridad
 
 ### Medidas de Seguridad Implementadas
 
@@ -765,7 +765,7 @@ define('ruta', 'http://'.$_SERVER["HTTP_HOST"].'/extranet/');
 
 ---
 
-## 🛠️ Desarrollo y Contribución
+## <i class="fa fa-tools"></i> Desarrollo y Contribución
 
 ### Estructura MVC
 
@@ -860,7 +860,7 @@ npm run test:ui
 
 ---
 
-## 📝 Changelog
+## <i class="fa fa-file-alt"></i> Changelog
 
 Ver archivo `CHANGELOG.md` para historial completo de cambios.
 
@@ -883,7 +883,7 @@ Ver archivo `CHANGELOG.md` para historial completo de cambios.
 
 ---
 
-## 📞 Soporte y Contacto
+## <i class="fa fa-phone"></i> Soporte y Contacto
 
 - **Repositorio**: https://github.com/Xangel0s/Nova-Intranet-extranet
 - **Issues**: Crear issue en GitHub para reportar problemas
@@ -891,7 +891,7 @@ Ver archivo `CHANGELOG.md` para historial completo de cambios.
 
 ---
 
-## 📄 Licencia
+## <i class="fa fa-file"></i> Licencia
 
 Este proyecto es privado y de uso exclusivo de **Nova Solutions S.A.C.**
 
@@ -903,7 +903,7 @@ Este proyecto es privado y de uso exclusivo de **Nova Solutions S.A.C.**
 
 ---
 
-## 🔗 Enlaces Útiles
+## <i class="fa fa-link"></i> Enlaces Útiles
 
 - [README Principal](README.md)
 - [Changelog](CHANGELOG.md)

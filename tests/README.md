@@ -2,14 +2,14 @@
 
 Este directorio contiene las pruebas end-to-end (E2E) para el sistema Nova Intranet/Extranet utilizando Playwright.
 
-## 📋 Requisitos Previos
+## <i class="fa fa-clipboard-list"></i> Requisitos Previos
 
 1. **Node.js** instalado (versión 14 o superior)
 2. **Apache** corriendo en `http://localhost`
 3. **MySQL** corriendo con la base de datos `nova_intranet` configurada
 4. Base de datos instalada ejecutando: `http://localhost/crear_db_automaticamente/install.php`
 
-## 🚀 Instalación
+## <i class="fa fa-rocket"></i> Instalación
 
 1. Instalar dependencias:
 ```bash
@@ -21,7 +21,7 @@ npm install
 npx playwright install
 ```
 
-## 🧪 Ejecutar Pruebas
+## <i class="fa fa-flask"></i> Ejecutar Pruebas
 
 ### Ejecutar todas las pruebas
 ```bash
@@ -50,7 +50,7 @@ npx playwright test tests/navigation.spec.js
 npx playwright test tests/console-validation.spec.js
 ```
 
-## 📁 Estructura de Pruebas
+## <i class="fa fa-folder"></i> Estructura de Pruebas
 
 - **auth.spec.js**: Pruebas de autenticación (login cliente/admin, logout)
 - **navigation.spec.js**: Pruebas de navegación entre páginas
@@ -58,7 +58,7 @@ npx playwright test tests/console-validation.spec.js
 - **client-features.spec.js**: Pruebas de funcionalidades del cliente
 - **admin-features.spec.js**: Pruebas de funcionalidades del admin
 
-## 🔑 Credenciales de Prueba
+## <i class="fa fa-key"></i> Credenciales de Prueba
 
 ### Cliente (Intranet)
 - **RUC:** `20123456789`
@@ -68,14 +68,14 @@ npx playwright test tests/console-validation.spec.js
 - **Usuario:** `admin`
 - **Contraseña:** `admin123`
 
-## 📊 Ver Reportes
+## <i class="fa fa-chart-bar"></i> Ver Reportes
 
 Después de ejecutar las pruebas, se genera un reporte HTML:
 ```bash
 npx playwright show-report
 ```
 
-## ⚙️ Configuración
+## <i class="fa fa-cog"></i> Configuración
 
 La configuración de Playwright está en `playwright.config.js`. Puedes modificar:
 - Base URL
@@ -83,7 +83,7 @@ La configuración de Playwright está en `playwright.config.js`. Puedes modifica
 - Timeouts
 - Screenshots y videos
 
-## 🐛 Solución de Problemas
+## <i class="fa fa-bug"></i> Solución de Problemas
 
 ### Error: "Cannot find module '@playwright/test'"
 Ejecuta: `npm install`
@@ -94,7 +94,7 @@ Asegúrate de que Apache esté corriendo en `http://localhost`
 ### Error: "Database connection failed"
 Ejecuta el script de instalación de la base de datos primero
 
-## 📝 Notas
+## <i class="fa fa-file-alt"></i> Notas
 
 - Las pruebas asumen que el servidor está corriendo en `http://localhost`
 - Las pruebas requieren que la base de datos esté configurada con datos de prueba

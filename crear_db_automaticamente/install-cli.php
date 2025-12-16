@@ -14,7 +14,7 @@ $user = 'root';
 $password = '';
 $dbname = 'nova_intranet';
 
-echo "🔧 Instalación de NovaIntranet (CLI)\n";
+echo "Instalación de NovaIntranet (CLI)\n";
 echo "=====================================\n\n";
 
 try {
@@ -22,18 +22,14 @@ try {
     $pdo = new PDO("mysql:host=$host", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    echo "✓ Conexión a MySQL exitosa\n";
+    echo "Conexión a MySQL exitosa\n";
     
-    // Crear base de datos si no existe
     $pdo->exec("CREATE DATABASE IF NOT EXISTS `$dbname` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-    echo "✓ Base de datos '$dbname' creada o ya existe\n";
+    echo "Base de datos '$dbname' creada o ya existe\n";
     
-    // Seleccionar base de datos
     $pdo->exec("USE `$dbname`");
     
-    // ============================================
-    // CREAR TABLA: clientes
-    // ============================================
+    // Crear tabla: clientes
     $sql_clientes = "CREATE TABLE IF NOT EXISTS `clientes` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `ruc` varchar(255) NOT NULL COMMENT 'RUC o identificador único del cliente (usado para login)',
@@ -50,11 +46,9 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de clientes/empresas del sistema'";
     
     $pdo->exec($sql_clientes);
-    echo "✓ Tabla 'clientes' creada\n";
+    echo "Tabla 'clientes' creada\n";
     
-    // ============================================
-    // CREAR TABLA: pdf
-    // ============================================
+    // Crear tabla: pdf
     $sql_pdf = "CREATE TABLE IF NOT EXISTS `pdf` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `id_user` int(11) NOT NULL COMMENT 'ID del cliente propietario del PDF',
@@ -73,11 +67,9 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de documentos PDF del sistema'";
     
     $pdo->exec($sql_pdf);
-    echo "✓ Tabla 'pdf' creada\n";
+    echo "Tabla 'pdf' creada\n";
     
-    // ============================================
-    // CREAR TABLA: usuarios (administradores)
-    // ============================================
+    // Crear tabla: usuarios (administradores)
     $sql_usuarios = "CREATE TABLE IF NOT EXISTS `usuarios` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `usuario` varchar(100) NOT NULL COMMENT 'Nombre de usuario',
@@ -93,13 +85,9 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de usuarios administradores'";
     
     $pdo->exec($sql_usuarios);
-    echo "✓ Tabla 'usuarios' creada\n";
+    echo "Tabla 'usuarios' creada\n";
     
-    // ============================================
-    // INSERTAR DATOS DE PRUEBA
-    // ============================================
-    
-    // Verificar si ya existen datos
+    // Insertar datos de prueba
     $stmt = $pdo->query("SELECT COUNT(*) as total FROM clientes");
     $total_clientes = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
     
@@ -110,9 +98,9 @@ try {
                     ('20123456789', 'Nova Solutions S.A.C.', '977777777', 'Av. Tecnología 123, San Isidro, Lima', 'Director General', 'empresa123', 'contacto@novasolutions.com'),
                     ('admin', 'Usuario Administrador', '999999999', 'Av. Tecnología 123, San Isidro, Lima', 'Admin', 'admin123', 'admin@novasolutions.com'),
                     ('user', 'Usuario Empleado', '988888888', 'Av. Tecnología 456, San Isidro, Lima', 'Usuario', 'user123', 'user@novasolutions.com')");
-        echo "✓ Datos de prueba de clientes insertados\n";
+        echo "Datos de prueba de clientes insertados\n";
     } else {
-        echo "ℹ️ Ya existen clientes en la base de datos\n";
+        echo "Ya existen clientes en la base de datos\n";
     }
     
     // Verificar usuarios admin
@@ -123,20 +111,20 @@ try {
         // Insertar usuario admin
         $pdo->exec("INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`, `correo`, `rol`, `activo`) 
                     VALUES ('admin', 'admin123', 'Administrador del Sistema', 'admin@novasolutions.com', 'admin', 1)");
-        echo "✓ Usuario administrador creado\n";
+        echo "Usuario administrador creado\n";
     } else {
-        echo "ℹ️ Ya existen usuarios administradores\n";
+        echo "Ya existen usuarios administradores\n";
     }
     
     // Verificar tablas creadas
     $stmt = $pdo->query("SHOW TABLES");
     $tables = $stmt->fetchAll(PDO::FETCH_COLUMN);
     
-    echo "✓ Tablas creadas (" . count($tables) . "): " . implode(', ', $tables) . "\n";
+    echo "Tablas creadas (" . count($tables) . "): " . implode(', ', $tables) . "\n";
     
-    echo "\n✅ Instalación completada exitosamente\n\n";
+    echo "\nInstalación completada exitosamente\n\n";
     
-    echo "🔑 Credenciales de acceso:\n";
+    echo "Credenciales de acceso:\n";
     echo "Cliente (Intranet):\n";
     echo "  RUC: 20123456789\n";
     echo "  Contraseña: empresa123\n\n";
@@ -145,11 +133,11 @@ try {
     echo "  Contraseña: admin123\n\n";
     
 } catch (PDOException $e) {
-    echo "✗ Error de base de datos: " . $e->getMessage() . "\n";
+    echo "Error de base de datos: " . $e->getMessage() . "\n";
     echo "Asegúrate de que MySQL esté ejecutándose y las credenciales sean correctas.\n";
     exit(1);
 } catch (Exception $e) {
-    echo "✗ Error: " . $e->getMessage() . "\n";
+    echo "Error: " . $e->getMessage() . "\n";
     exit(1);
 }
 

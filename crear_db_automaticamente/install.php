@@ -3,7 +3,7 @@
  * Script de Instalación - NovaIntranet
  * Este script crea automáticamente la base de datos y todas las tablas
  * 
- * ⚠️ IMPORTANTE: Este script debe ser eliminado después de la instalación
+ * IMPORTANTE: Este script debe ser eliminado después de la instalación
  */
 
 // Protección básica: Solo permitir desde localhost
@@ -28,6 +28,7 @@ echo "<!DOCTYPE html>
 <head>
     <meta charset='UTF-8'>
     <title>Instalación NovaIntranet</title>
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css\">
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; background: #f5f5f5; }
         .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
@@ -36,8 +37,11 @@ echo "<!DOCTYPE html>
         .info { color: #004085; padding: 12px; background: #d1ecf1; border: 1px solid #bee5eb; margin: 10px 0; border-radius: 4px; }
         .warning { color: #856404; padding: 12px; background: #fff3cd; border: 1px solid #ffeaa7; margin: 10px 0; border-radius: 4px; }
         h1 { color: #333; border-bottom: 3px solid #007bff; padding-bottom: 10px; }
+        h1 i, h3 i { margin-right: 8px; }
         h2 { color: #555; margin-top: 20px; }
+        h2 i { margin-right: 8px; }
         h3 { color: #666; }
+        .success i, .error i, .info i, .warning i { margin-right: 8px; }
         code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
         a { color: #007bff; text-decoration: none; }
         a:hover { text-decoration: underline; }
@@ -45,10 +49,10 @@ echo "<!DOCTYPE html>
 </head>
 <body>
     <div class='container'>
-        <h1>🔧 Instalación de NovaIntranet</h1>
+        <h1><i class=\"fa fa-wrench\"></i> Instalación de NovaIntranet</h1>
         
         <div class='warning'>
-            <strong>⚠️ ADVERTENCIA DE SEGURIDAD:</strong><br>
+            <strong><i class=\"fa fa-exclamation-triangle\"></i> ADVERTENCIA DE SEGURIDAD:</strong><br>
             Este script debe ser <strong>eliminado después de la instalación</strong>.<br>
             No dejar este archivo en servidores de producción.
         </div>";
@@ -58,18 +62,15 @@ try {
     $pdo = new PDO("mysql:host=$host", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    echo "<div class='success'>✓ Conexión a MySQL exitosa</div>";
+    echo "<div class='success'><i class=\"fa fa-check\"></i> Conexión a MySQL exitosa</div>";
     
-    // Crear base de datos si no existe
     $pdo->exec("CREATE DATABASE IF NOT EXISTS `$dbname` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-    echo "<div class='success'>✓ Base de datos '$dbname' creada o ya existe</div>";
+    echo "<div class='success'><i class=\"fa fa-check\"></i> Base de datos '$dbname' creada o ya existe</div>";
     
     // Seleccionar base de datos
     $pdo->exec("USE `$dbname`");
     
-    // ============================================
-    // CREAR TABLA: clientes
-    // ============================================
+    // Crear tabla: clientes
     $sql_clientes = "CREATE TABLE IF NOT EXISTS `clientes` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `ruc` varchar(255) NOT NULL COMMENT 'RUC o identificador único del cliente (usado para login)',
@@ -86,11 +87,9 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de clientes/empresas del sistema'";
     
     $pdo->exec($sql_clientes);
-    echo "<div class='success'>✓ Tabla 'clientes' creada</div>";
+    echo "<div class='success'><i class=\"fa fa-check\"></i> Tabla 'clientes' creada</div>";
     
-    // ============================================
-    // CREAR TABLA: pdf
-    // ============================================
+    // Crear tabla: pdf
     $sql_pdf = "CREATE TABLE IF NOT EXISTS `pdf` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `id_user` int(11) NOT NULL COMMENT 'ID del cliente propietario del PDF',
@@ -109,11 +108,9 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de documentos PDF del sistema'";
     
     $pdo->exec($sql_pdf);
-    echo "<div class='success'>✓ Tabla 'pdf' creada</div>";
+    echo "<div class='success'><i class=\"fa fa-check\"></i> Tabla 'pdf' creada</div>";
     
-    // ============================================
-    // CREAR TABLA: usuarios (administradores)
-    // ============================================
+    // Crear tabla: usuarios (administradores)
     $sql_usuarios = "CREATE TABLE IF NOT EXISTS `usuarios` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `usuario` varchar(100) NOT NULL COMMENT 'Nombre de usuario',
@@ -129,13 +126,9 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de usuarios administradores'";
     
     $pdo->exec($sql_usuarios);
-    echo "<div class='success'>✓ Tabla 'usuarios' creada</div>";
+    echo "<div class='success'><i class=\"fa fa-check\"></i> Tabla 'usuarios' creada</div>";
     
-    // ============================================
-    // INSERTAR DATOS DE PRUEBA
-    // ============================================
-    
-    // Verificar si ya existen datos
+    // Insertar datos de prueba
     $stmt = $pdo->query("SELECT COUNT(*) as total FROM clientes");
     $total_clientes = $stmt->fetch(PDO::FETCH_ASSOC)['total'];
     
@@ -146,9 +139,9 @@ try {
                     ('20123456789', 'Nova Solutions S.A.C.', '977777777', 'Av. Tecnología 123, San Isidro, Lima', 'Director General', 'empresa123', 'contacto@novasolutions.com'),
                     ('admin', 'Usuario Administrador', '999999999', 'Av. Tecnología 123, San Isidro, Lima', 'Admin', 'admin123', 'admin@novasolutions.com'),
                     ('user', 'Usuario Empleado', '988888888', 'Av. Tecnología 456, San Isidro, Lima', 'Usuario', 'user123', 'user@novasolutions.com')");
-        echo "<div class='success'>✓ Datos de prueba de clientes insertados</div>";
+        echo "<div class='success'><i class=\"fa fa-check\"></i> Datos de prueba de clientes insertados</div>";
     } else {
-        echo "<div class='info'>ℹ️ Ya existen clientes en la base de datos</div>";
+        echo "<div class='info'><i class=\"fa fa-info-circle\"></i> Ya existen clientes en la base de datos</div>";
     }
     
     // Verificar usuarios admin
@@ -159,22 +152,21 @@ try {
         // Insertar usuario admin
         $pdo->exec("INSERT INTO `usuarios` (`usuario`, `clave`, `nombre`, `correo`, `rol`, `activo`) 
                     VALUES ('admin', 'admin123', 'Administrador del Sistema', 'admin@novasolutions.com', 'admin', 1)");
-        echo "<div class='success'>✓ Usuario administrador creado</div>";
+        echo "<div class='success'><i class=\"fa fa-check\"></i> Usuario administrador creado</div>";
     } else {
-        echo "<div class='info'>ℹ️ Ya existen usuarios administradores</div>";
+        echo "<div class='info'><i class=\"fa fa-info-circle\"></i> Ya existen usuarios administradores</div>";
     }
     
     // Verificar tablas creadas
     $stmt = $pdo->query("SHOW TABLES");
     $tables = $stmt->fetchAll(PDO::FETCH_COLUMN);
     
-    echo "<div class='success'>✓ Tablas creadas (" . count($tables) . "): " . implode(', ', $tables) . "</div>";
+    echo "<div class='success'><i class=\"fa fa-check\"></i> Tablas creadas (" . count($tables) . "): " . implode(', ', $tables) . "</div>";
     
-    // Verificar usuarios de prueba
     $stmt = $pdo->query("SELECT ruc, razon_social FROM clientes LIMIT 5");
     $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    echo "<div class='info'><strong>👥 Usuarios de prueba creados:</strong><br>";
+    echo "<div class='info'><strong><i class=\"fa fa-users\"></i> Usuarios de prueba creados:</strong><br>";
     foreach ($clientes as $cliente) {
         echo "- RUC: <strong>" . htmlspecialchars($cliente['ruc']) . "</strong> - " . htmlspecialchars($cliente['razon_social']) . "<br>";
     }
@@ -185,40 +177,40 @@ try {
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     if (!empty($usuarios)) {
-        echo "<div class='info'><strong>👤 Usuarios administradores:</strong><br>";
+        echo "<div class='info'><strong><i class=\"fa fa-user\"></i> Usuarios administradores:</strong><br>";
         foreach ($usuarios as $usuario) {
             echo "- Usuario: <strong>" . htmlspecialchars($usuario['usuario']) . "</strong> - " . htmlspecialchars($usuario['nombre']) . "<br>";
         }
         echo "</div>";
     }
     
-    echo "<div class='success'><h2>✅ Instalación completada exitosamente</h2></div>";
+    echo "<div class='success'><h2><i class=\"fa fa-check\"></i> Instalación completada exitosamente</h2></div>";
     
     echo "<div class='info'>
-        <h3>🔑 Credenciales de acceso:</h3>
+        <h3><i class=\"fa fa-key\"></i> Credenciales de acceso:</h3>
         <p><strong>Cliente (Intranet):</strong><br>
-        🌐 <a href='../cliente' target='_blank'>Ir a Cliente</a><br>
+        <i class=\"fa fa-globe\"></i> <a href='../cliente' target='_blank'>Ir a Cliente</a><br>
         RUC: <code>20123456789</code><br>
         Contraseña: <code>empresa123</code></p>
         
         <p><strong>Admin (Extranet):</strong><br>
-        🌐 <a href='../admin' target='_blank'>Ir a Admin</a><br>
+        <i class=\"fa fa-globe\"></i> <a href='../admin' target='_blank'>Ir a Admin</a><br>
         Usuario: <code>admin</code><br>
         Contraseña: <code>admin123</code></p>
     </div>";
     
     echo "<div class='warning'>
-        <strong>⚠️ IMPORTANTE:</strong><br>
+        <strong><i class=\"fa fa-exclamation-triangle\"></i> IMPORTANTE:</strong><br>
         1. Verifica que los archivos <code>config.php</code> estén configurados correctamente<br>
         2. <strong>ELIMINA este archivo (install.php) después de la instalación</strong><br>
         3. No subas este archivo a producción
     </div>";
     
 } catch (PDOException $e) {
-    echo "<div class='error'>✗ Error de base de datos: " . htmlspecialchars($e->getMessage()) . "</div>";
+    echo "<div class='error'><i class=\"fa fa-times\"></i> Error de base de datos: " . htmlspecialchars($e->getMessage()) . "</div>";
     echo "<div class='info'>Asegúrate de que MySQL esté ejecutándose y las credenciales sean correctas.</div>";
 } catch (Exception $e) {
-    echo "<div class='error'>✗ Error: " . htmlspecialchars($e->getMessage()) . "</div>";
+    echo "<div class='error'><i class=\"fa fa-times\"></i> Error: " . htmlspecialchars($e->getMessage()) . "</div>";
 }
 
 echo "    </div>

@@ -11,7 +11,14 @@
         <header class="header">
             <h1>Nova Extranet</h1>
             <div class="user-info">
-                <span><?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
+                <span><?php 
+                // Función para limpiar emojis
+                function limpiarEmojisHeader($texto) {
+                    if (empty($texto)) return $texto;
+                    return preg_replace('/[\x{1F300}-\x{1F9FF}]/u', '', $texto);
+                }
+                echo htmlspecialchars(limpiarEmojisHeader($_SESSION['nombre'])); 
+                ?></span>
                 <a href="<?php echo ruta; ?>?pagina=logout" class="btn-logout">Cerrar Sesión</a>
             </div>
         </header>
@@ -26,7 +33,14 @@
         <main class="main-content">
             <h2>Clientes</h2>
             
-            <?php if (empty($clientes)): ?>
+            <?php 
+            // Función para limpiar emojis de los datos
+            function limpiarEmojis($texto) {
+                if (empty($texto)) return $texto;
+                return preg_replace('/[\x{1F300}-\x{1F9FF}]/u', '', $texto);
+            }
+            
+            if (empty($clientes)): ?>
                 <div class="empty-state">
                     <p>No hay clientes registrados</p>
                 </div>
@@ -45,10 +59,10 @@
                         <tbody>
                             <?php foreach ($clientes as $cliente): ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($cliente['ruc']); ?></td>
-                                    <td><?php echo htmlspecialchars($cliente['razon_social']); ?></td>
-                                    <td><?php echo htmlspecialchars($cliente['correo'] ?? 'N/A'); ?></td>
-                                    <td><?php echo htmlspecialchars($cliente['telefono'] ?? 'N/A'); ?></td>
+                                    <td><?php echo htmlspecialchars(limpiarEmojis($cliente['ruc'])); ?></td>
+                                    <td><?php echo htmlspecialchars(limpiarEmojis($cliente['razon_social'])); ?></td>
+                                    <td><?php echo htmlspecialchars(limpiarEmojis($cliente['correo'] ?? 'N/A')); ?></td>
+                                    <td><?php echo htmlspecialchars(limpiarEmojis($cliente['telefono'] ?? 'N/A')); ?></td>
                                     <td><?php echo date('d/m/Y', strtotime($cliente['fecha_registro'])); ?></td>
                                 </tr>
                             <?php endforeach; ?>
